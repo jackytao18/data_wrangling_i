@@ -132,3 +132,39 @@ read_csv("data_import_examples/FAS_litters.csv", na = c("", "NA", 999, 88), skip
 ```
 
 \##Other file formats
+
+We need to read in an excel spreadsheet …
+
+``` r
+mlb_df = read_excel("data_import_examples/mlb11.xlsx")
+```
+
+``` r
+View(mlb_df)
+```
+
+``` r
+lotr_words = 
+  read_excel(
+    "data_import_examples/LotR_Words.xlsx",
+    range = "B3:D6"
+  )
+```
+
+## Still more formats …
+
+Read in a SAS dataset.
+
+``` r
+pulse_df = read_sas("data_import_examples/public_pulse_data.sas7bdat")
+```
+
+## Data export
+
+``` r
+write_csv(lotr_words, file = "results/lotr_words.csv")
+```
+
+## Why not base r???
+
+dont_do_this_df = read.csv
